@@ -15,11 +15,11 @@ const TeamMemberCard = ({name, description, photo, slug}: Readonly<TeamMemberPro
     <Link href={`/our-team/${slug}`}>
         <Card>
             <CardHeader>
-            <Image className='rounded-md' src={imageURL} alt={photo.alternativeText || name} width={500} height={500}/>
+            <Image className='rounded-full' src={imageURL} alt={photo.alternativeText || name} width={500} height={500}/>
             </CardHeader>
             <CardContent>
-                <p className='font-semibold'>{name}</p>
-                <p className='mb-2 mt-2 font-lightt-'>{description}</p>
+                <p className='font-semibold truncate'>{name}</p>
+                <p className='mb-2 mt-2  font-light'>{description}</p>
             </CardContent>
         </Card>
     </Link>

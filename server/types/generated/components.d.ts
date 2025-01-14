@@ -24,12 +24,13 @@ export interface BlocksSpoiler extends Struct.ComponentSchema {
 export interface BlocksTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_blocks_testimonials';
   info: {
+    description: '';
     displayName: 'testimonial';
   };
   attributes: {
     authorName: Schema.Attribute.String;
     photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    quotes: Schema.Attribute.Text;
+    quote: Schema.Attribute.Text;
   };
 }
 
