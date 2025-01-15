@@ -26,7 +26,6 @@ const TestimonialBlock = ({ block }: { block: TestimonialBlockInterface }) =>  {
           <Image
             src={imageUrl}
             alt={block.photo.alternativeText || block.authorName}
-            objectFit="cover"
             width={150}
             height={150}
             className="w-full h-full object-center object-cover"
