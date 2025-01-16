@@ -5,7 +5,8 @@ import NavLink from './nav-link'
 const links = [
     {href:'/', label: 'Home'},
     {href:'/about', label:'About'},
-    {href:'/our-team', label: "Our Team"}
+    {href:'/our-team', label: "Our Team"},
+    {href:'/products', label: "Products"}
 ]
 
 const Header = () => {

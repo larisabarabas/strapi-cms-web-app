@@ -4,7 +4,7 @@ import React from 'react'
 
 const Team = async () => {
   const teamMembers = await getTeamMembers()
-  console.log(teamMembers)
+
   return (
     <div>
       <h1 className='text-xl font-semibold mb-4'>Our Team</h1>

@@ -1,12 +1,16 @@
-import { getTeamMemberDetails } from '@/app/api/strapi';
+import { getTeamMemberDetails, getTeamMembers } from '@/app/api/strapi';
 import { BlockRenderer, TeamPageBlock } from '@/components/blocks';
+
+export const generateStaticParamas = async () => {
+    const teamMembers = await getTeamMembers()
+    return teamMembers.data.map((item:TeamMemberProps) => ({ slug: item.slug }))
+}
 
 const TeamMember = async ({ params }: {params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug
 
   if(!slug) return <p>No member found</p>
   const teamMember = await getTeamMemberDetails(slug)
-  console.log(teamMember)
 
   return (
       <div>
