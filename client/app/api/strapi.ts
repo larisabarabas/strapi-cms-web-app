@@ -1,5 +1,7 @@
 import qs from 'qs'
 
+// TODO: Improvements - error handling, type safety, code readability, remove duplicated code - reusable functions
+
 export async function getGlobalInfo(){
   const baseURL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337"
   const path = "/api/global"
@@ -33,6 +35,31 @@ export async function getAboutContent(){
   return data
 }
 
+export async function getHomeContent(){
+  const baseURL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337"
+  const path = "/api/home"
+  
+  const url = new URL(path, baseURL)
+  url.search = qs.stringify({
+    populate: {
+      blocks: {
+        on: {
+          'blocks.announcement-banner':{
+            populate: true
+          }
+        }
+      }
+    }
+  })
+  console.log("URL:",url)
+
+  const response = await fetch(url)
+  if(!response.ok) throw new Error("Failed to fetch about content")
+  const data = await response.json()
+
+  return data
+}
+
 
 export async function getTeamMembers(){
   const baseURL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337"
@@ -56,9 +83,6 @@ export async function getTeamMembers(){
                 'blocks.spoiler':{
                   populate: true
                 },
-              //   'blocks.rich-text': {
-              //     populate: true
-              //   }
               }
             }
           }

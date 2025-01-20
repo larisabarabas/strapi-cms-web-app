@@ -1,5 +1,18 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksAnnouncementBanner extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_announcement_banners';
+  info: {
+    description: '';
+    displayName: 'AnnouncementBanner';
+  };
+  attributes: {
+    linkTitle: Schema.Attribute.String;
+    linkURL: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksRichText extends Struct.ComponentSchema {
   collectionName: 'components_blocks_rich_texts';
   info: {
@@ -37,6 +50,7 @@ export interface BlocksTestimonial extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.announcement-banner': BlocksAnnouncementBanner;
       'blocks.rich-text': BlocksRichText;
       'blocks.spoiler': BlocksSpoiler;
       'blocks.testimonial': BlocksTestimonial;

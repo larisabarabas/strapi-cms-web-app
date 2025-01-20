@@ -14,7 +14,7 @@ const NavLink = ({href, children} : Readonly<NavLinkProps>) => {
   const isActive = href === "/" ? pathName === "/" : pathName.startsWith(href)
     return (
    <li>
-        <Link href={href} className={cn(isActive ? 'opacity-100' : 'opacity-50 hover:opacity-100')}>{children}</Link>
+        <Link href={href} className={cn(isActive ? 'opacity-100 font-semibold' : 'opacity-50 hover:opacity-100')}>{children}</Link>
    </li>
   )
 }

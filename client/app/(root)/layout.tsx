@@ -43,7 +43,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="bg-gray-100 min-h-screen grid grid-rows-[auto_1fr_auto]">
           <Header/>
-          <main className="bg-gray-200 container mx-auto rounded-xl py-7 px-8 m-6 overflow-hidden">
+          <main className="overflow-hidden">
             {children}
           </main>
           <Footer/>

@@ -40,6 +40,11 @@ export default {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
+			'primary-dark': '#591420',
+			'secondary-light': '#BF99A3',
+			'accent-purple': '#482059',
+			'deep-purple': '#51358C',
+			'accent-orange': '#F25922',
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',

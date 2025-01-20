@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_announcement_banners",
+  "info": {
+    "displayName": "AnnouncementBanner",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "linkTitle": {
+      "type": "string"
+    },
+    "linkURL": {
+      "type": "string"
+    }
+  }
+}
