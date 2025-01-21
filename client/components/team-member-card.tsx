@@ -9,7 +9,7 @@ import {
 import Link from 'next/link';
 
 
-const TeamMemberCard = ({name, description, photo, slug}: Readonly<TeamMemberProps>) => {
+const TeamMemberCard = ({name, description, photo, slug}: Readonly<TeamMember>) => {
     const imageURL = `${process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:1337'}${photo.url}`
     return (
     <Link href={`/our-team/${slug}`}>

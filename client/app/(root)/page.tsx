@@ -4,8 +4,8 @@ import { getHomeContent } from "../api/strapi";
 
 const Home = async () =>  {
   const homeContent = await getHomeContent();
-  const {headline, description} = homeContent.data
-  console.log(homeContent)
+  const {headline, description} = homeContent!
+
   return (
     <div>
       <div className="relative isolate px-6 pt-14 lg:px-8">
