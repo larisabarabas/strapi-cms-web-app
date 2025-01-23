@@ -4,7 +4,7 @@ import React from 'react'
 
 const Team = async () => {
   const teamMembers = await getTeamMembers()
-  if (!teamMembers) return [];
+  if (!teamMembers) return <p>No team members found.</p>;
   return (
     <div className='bg-gray-200 container mx-auto w-full rounded-xl py-7 px-8 m-6'>
       <h1 className='text-xl font-semibold mb-4'>Our Team</h1>

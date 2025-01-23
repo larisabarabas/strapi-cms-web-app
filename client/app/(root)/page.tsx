@@ -4,7 +4,11 @@ import { getHomeContent } from "../api/strapi";
 
 const Home = async () =>  {
   const homeContent = await getHomeContent();
-  const {headline, description} = homeContent!
+
+  if (!homeContent) {
+    return <div>Failed to load content</div>
+  }
+  const {headline, description} = homeContent
 
   return (
     <div>

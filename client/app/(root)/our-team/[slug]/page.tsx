@@ -17,7 +17,7 @@ const TeamMember = async ({ params }: {params: Promise<{ slug: string }> }) => {
 
   return (
       <div className='bg-gray-200 container mx-auto w-full rounded-xl py-7 px-8 m-6'>
-        {teamMember.blocks!.map((block: TeamPageBlock) => (
+        {teamMember.blocks?.map((block: TeamPageBlock) => (
           <BlockRenderer key={block.__component} block={block}/>
         ))}
       </div>

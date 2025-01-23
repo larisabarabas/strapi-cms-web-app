@@ -20,6 +20,7 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata():Promise<Metadata>{
   const siteMetadata = await getGlobalInfo()
+
   
   return {
     title: siteMetadata?.metaTitle || "Default Title",

@@ -70,7 +70,6 @@ export async function getHomeContent(){
 
   try {
     const response = await fetch(url)
-    if(!response.ok) throw new Error("Failed to fetch about content")
     const data = await handleApiResponse(response)
     const homeContent = data.data as HomeContent
 
@@ -107,7 +106,6 @@ export async function getTeamMembers(){
 
 try {
   const response = await fetch(url)
-  if(!response.ok) throw new Error("Failed to fetch team members")
   const data = await handleApiResponse(response)
   const teamMembers = data.data as TeamMembers
 
@@ -151,13 +149,11 @@ export async function getTeamMemberDetails(slug:string){
   })
 
   try {
-
     const response = await fetch(url)
-    if(!response.ok) throw new Error("Failed to fetch team member details")
-    const data = await response.json()
-    const teamMember = data?.data[0]
+    const data = await handleApiResponse(response)
+    const teamMember = data?.data[0] as TeamMember
     
-    return teamMember as TeamMember
+    return teamMember 
     
   } catch (error) {
     console.error(error)
