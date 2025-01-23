@@ -4,10 +4,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from "../lib/utils";
 
-interface NavLinkProps {
-    href:string,
-    children: React.ReactNode
-}
 
 const NavLink = ({href, children} : Readonly<NavLinkProps>) => {
   const pathName = usePathname()

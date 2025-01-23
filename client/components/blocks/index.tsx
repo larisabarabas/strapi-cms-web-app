@@ -2,7 +2,6 @@ import  TestimonialBlock, {TestimonialBlockInterface} from "./testimonial-block"
 import SpoilerBlock, {SpoilerBlockInterface} from "./spoiler-block";
 import { RichTextBlock } from "./rich-text-block";
 
-type TeamPageBlock = SpoilerBlockInterface | TestimonialBlockInterface | RichTextBlock  ;
 
 const blocks: Record<
   TeamPageBlock["__component"],
@@ -25,4 +24,3 @@ function BlockRenderer({ block }: { block: TeamPageBlock }) {
 }
 
 export { BlockRenderer };
-export type { TeamPageBlock };

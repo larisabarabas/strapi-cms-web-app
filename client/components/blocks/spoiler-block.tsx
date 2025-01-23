@@ -2,13 +2,6 @@
 
 import {useState} from 'react'
 
-export interface SpoilerBlockInterface {
-    __component: "blocks.spoiler",
-    id: number,
-    title: string,
-    content: string
-}
-
 
 const SpoilerBlock = ({block} : {block: SpoilerBlockInterface}) => {
     const [isExpanded, setIsExpanded] = useState(false)

@@ -20,14 +20,15 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata():Promise<Metadata>{
   const siteMetadata = await getGlobalInfo()
-  console.log("siteMetadata:", siteMetadata)
+
+  
   return {
-    title: siteMetadata.data.metaTitle || "Default Title",
-    description: siteMetadata.data.metaDescription || "Default Description",
+    title: siteMetadata?.metaTitle ?? "Default Title",
+    description: siteMetadata?.metaDescription ?? "Default Description",
     authors:[
       {
-        name: siteMetadata.data.metaAuthor || '',
-        url: siteMetadata.data.metaAuthorURL || ''
+        name: siteMetadata?.metaAuthor ?? '',
+        url: siteMetadata?.metaAuthorURL ?? ''
       }
     ]
   }

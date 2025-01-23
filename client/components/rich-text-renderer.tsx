@@ -1,46 +1,5 @@
 import React, {JSX} from "react";
 
-type TextNode = {
-  text: string;
-  type: "text";
-};
-
-type HeadingNode = {
-  type: "heading";
-  level: number;
-  children: RichTextNode[];
-};
-
-type ParagraphNode = {
-  type: "paragraph";
-  children: RichTextNode[];
-};
-
-type LinkNode = {
-  type: "link";
-  url: string;
-  children: RichTextNode[];
-};
-
-type ListItemNode = {
-  type: "list-item";
-  children: RichTextNode[];
-};
-
-type ListNode = {
-  type: "list";
-  format: "ordered" | "unordered";
-  children: ListItemNode[];
-};
-
-export type RichTextNode = TextNode | HeadingNode | ParagraphNode | LinkNode | ListNode | ListItemNode;
-
-export interface RichTextRendererProps {
-  content: RichTextNode[];
-  customRenderers?: Partial<Record<RichTextNode["type"], (node: RichTextNode) => React.ReactNode>>;
-  defaultClassName?: string;
-}
-
 const RichTextRenderer: React.FC<RichTextRendererProps> = ({
   content,
   customRenderers = {},

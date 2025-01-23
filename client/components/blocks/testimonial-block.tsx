@@ -1,18 +1,5 @@
 import Image from "next/image";
 
-export interface TestimonialBlockInterface {
-  __component: "blocks.testimonial";
-  id: number;
-  authorName: string;
-  quote: string;
-  photo: {
-    id: number;
-    documentId: string;
-    alternativeText: string | null;
-    name: string;
-    url: string;
-  };
-}
 
 const TestimonialBlock = ({ block }: { block: TestimonialBlockInterface }) =>  {
   const imageUrl = `${
