@@ -22,12 +22,12 @@ export async function generateMetadata():Promise<Metadata>{
   const siteMetadata = await getGlobalInfo()
   
   return {
-    title: siteMetadata?.metaTitle || "Default Title",
-    description: siteMetadata?.metaDescription || "Default Description",
+    title: siteMetadata?.metaTitle ?? "Default Title",
+    description: siteMetadata?.metaDescription ?? "Default Description",
     authors:[
       {
-        name: siteMetadata?.metaAuthor || '',
-        url: siteMetadata?.metaAuthorURL || ''
+        name: siteMetadata?.metaAuthor ?? '',
+        url: siteMetadata?.metaAuthorURL ?? ''
       }
     ]
   }
