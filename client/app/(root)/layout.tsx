@@ -2,7 +2,7 @@
 export default function Layout({
   children,
 }: {
-  children: React.ReactNode;
+  children: Readonly<React.ReactNode>;
 }) {
   return (
     <main className="overflow-hidden">
