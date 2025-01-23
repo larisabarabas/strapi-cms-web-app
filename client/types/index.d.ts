@@ -108,6 +108,10 @@ interface SpoilerBlockInterface {
     title: string,
     content: string
 }
+interface QueryParams {
+  populate?: Record<string, unknown>;
+  filters?: Record<string, unknown>;
+}
 
 type TeamPageBlock = SpoilerBlockInterface | TestimonialBlockInterface | RichTextBlock 
 

@@ -3,7 +3,7 @@ import qs from 'qs'
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:1337"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const constructUrl = (endpoint: string, params: Record<string, any>) => {
+const constructUrl = (endpoint: string, params: QueryParams) => {
   const url = new URL(endpoint, API_URL)
   url.search = qs.stringify({populate: params.populate, filters:params.filters})
 
