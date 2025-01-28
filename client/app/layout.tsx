@@ -7,6 +7,7 @@ import "./globals.css";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header"
+import PromoBanner from "@/components/promo-banner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +42,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="bg-gray-100 min-h-screen grid grid-rows-[auto_1fr_auto]">
+        <div className="bg-gray-100 min-h-screen flex flex-col">
+          <PromoBanner/>
           <Header/>
             {children}
           <Footer/>
