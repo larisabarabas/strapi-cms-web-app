@@ -5,7 +5,7 @@ export default function Layout({
   children: Readonly<React.ReactNode>;
 }) {
   return (
-    <main className="overflow-hidden h-full">
+    <main className="min-h-screen">
     <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           aria-hidden="true"

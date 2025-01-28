@@ -160,5 +160,24 @@ export async function getTeamMemberDetails(slug:string){
     return null
   }
 
+}
 
+export async function getProducts(){
+  const url = constructUrl('/api/products', {
+    populate: {
+      image: {
+        fields: ['alternativeText', 'name', 'url']
+      },
+    }
+  })
+  try {
+    const response = await fetch(url)
+    const data = await handleApiResponse(response)
+    const products = data.data as Products
+
+    return products
+  } catch (error) {
+    console.error(error)
+    return null
+  }
 }
