@@ -12,7 +12,7 @@ const About = async () => {
     : 'https://placehold.co/500x500'
 
   return (
-    <div className="bg-gray-200 container rounded-xl py-7 px-8 m-6 max-w-4xl mx-auto p-6">
+    <div className="bg-[#4820591a] container rounded-xl py-7 px-8 m-6 max-w-4xl mx-auto p-6">
       <div className="flex flex-col items-center mb-8">
         <Image
           src={imageURL}
