@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="bg-gray-100 min-h-screen relative">
+        <div className="bg-gray-100 min-h-screen flex flex-col">
           <PromoBanner/>
           <Header/>
             {children}
