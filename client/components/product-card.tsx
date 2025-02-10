@@ -10,6 +10,8 @@ interface ProductCardProps {
 
 }
 
+const PLACEHOLDER_PRODUCT_IMAGE="https://placehold.co/300x300"
+
 const ProductCard = ({product} : ProductCardProps) => {
   const {name, price, image, discount} = product
   const imageURL = `${process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:1337'}${image.url}`
@@ -28,7 +30,7 @@ const ProductCard = ({product} : ProductCardProps) => {
         ) 
         }
      
-        <Image className='h-[380px]' src={imageURL} alt={name || 'Product name'} width={300} height={300}/> 
+        <Image className='h-[380px]' src={imageURL} alt={name || 'Product name'} width={300} height={300} onError={(e) => e.currentTarget.src = PLACEHOLDER_PRODUCT_IMAGE}/> 
       </div>
     
       <p className='text-xl font-semibold mt-4 text-center'>{name}</p>

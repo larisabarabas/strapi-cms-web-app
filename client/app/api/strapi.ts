@@ -28,8 +28,8 @@ export async function getGlobalInfo(){
 
   return globalInfo
  } catch (error) {
-  console.error(error)
-  return null
+  console.error('Failed fetching global information:',error)
+  throw new Error('Failed fetching global information. Please try again later!')
  }
 }
 
@@ -49,8 +49,8 @@ export async function getAboutContent(){
 
     return aboutContent
   } catch (error) {
-    console.error(error)
-    return null
+    console.error('Failed fetching about content:',error)
+    throw new Error('Failed fetching about content. Please try again later!')
   }
 }
 
@@ -75,8 +75,8 @@ export async function getHomeContent(){
 
     return homeContent
   } catch (error) {
-    console.error(error)
-    return null
+    console.error('Failed fetching home content:',error)
+    throw new Error('Failed fetching home content. Please try again later!')
   }
 }
 
@@ -111,8 +111,8 @@ try {
 
   return teamMembers
 } catch (error) {
-  console.error(error)
-  return null
+  console.error('Failed fetching team members:',error)
+  throw new Error('Failed fetching team members. Please try again later!')
 }
   
 }
@@ -156,8 +156,8 @@ export async function getTeamMemberDetails(slug:string){
     return teamMember 
     
   } catch (error) {
-    console.error(error)
-    return null
+    console.error('Failed fetching team member details:',error)
+    throw new Error('Failed fetching team member details. Please try again later!')
   }
 
 }
@@ -171,13 +171,15 @@ export async function getProducts(){
     }
   })
   try {
-    const response = await fetch(url)
+    const response = await fetch(url, {
+      next: {revalidate: 3600}
+    })
     const data = await handleApiResponse(response)
     const products = data.data as Products
 
     return products
   } catch (error) {
-    console.error(error)
-    return null
+    console.error('Failed to fetch products:', error)
+    throw new Error('Failed to fetch products. Please try again later!')
   }
 }
