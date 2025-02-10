@@ -150,3 +150,29 @@ type ListNode = {
 
 
 type RichTextNode = TextNode | HeadingNode | ParagraphNode | LinkNode | ListNode | ListItemNode;
+
+
+interface Product {
+  id:number,
+  documentId: number,
+  createdAt: string,
+  updatedAt: string,
+  publishedAt: string,
+  name: string,
+  description: string,
+  price: number,
+  discount?: {
+    type: 'percentage' | 'fixed',
+    value: number,
+    validUntil: string
+  },
+  image: {
+    id: number,
+    documentId: string;
+    alternativeText: string;
+    name: string,
+    url: string
+  }
+}
+
+type Products = Product[]

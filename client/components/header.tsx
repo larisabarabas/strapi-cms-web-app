@@ -11,7 +11,7 @@ const links = [
 
 const Header = () => {
   return (
-    <header>
+    <header className='z-[999]'>
         <nav className='container mx-auto flex justify-between items-center py-4 px-2'>
             <Link className='sm:text-base lg:text-2xl font-semibold text-accent-orange' href="/">🎀 Stef's Shop</Link>
             <ul className='flex gap-4'>
