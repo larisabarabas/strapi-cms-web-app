@@ -14,8 +14,8 @@ const TeamMemberCard = ({name, description, photo, slug}: Readonly<TeamMember>) 
     return (
     <Link href={`/our-team/${slug}`}>
         <Card>
-            <CardHeader>
-            <Image className='rounded-full' src={imageURL} alt={photo.alternativeText || name} width={500} height={500}/>
+            <CardHeader className='grid justify-center'>
+            <Image className='rounded-full w-[200px]' src={imageURL} alt={photo.alternativeText || name} width={300} height={300}/>
             </CardHeader>
             <CardContent>
                 <p className='font-semibold truncate'>{name}</p>
